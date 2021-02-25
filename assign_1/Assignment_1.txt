@@ -1,0 +1,44 @@
+CREATE DATABASE school;
+
+use school;
+
+CREATE TABLE student (
+student_id SERIAL,
+first_name VARCHAR(40) NOT NULL,
+last_name VARCHAR(40) NOT NULL,
+email VARCHAR(40) NOT NULL,
+phone VARCHAR(40) NOT NULL,
+PRIMARY KEY(student_id) 
+);
+
+CREATE TABLE student_exams (
+exam_id SERIAL,
+exam_date VARCHAR(40) NOT NULL,
+modulea VARCHAR(40) NOT NULL,
+grade DECIMAL(3,1) NOT NULL,
+student_id  INT NOT NULL,
+PRIMARY KEY(exam_id),
+FOREIGN KEY (student_id) REFERENCES student(student_id)
+);
+
+1)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Giannis','Markatos','gm@gmail.com','6987654526');
+2)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Panagiotis','Makropoulos','panosm@gmail.com','6921654526');
+3)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Ioanna','Markatou','gianam@gmail.com','6913654526');
+4)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Pashalis','Stathatos','pasxalm@gmail.com','6946654526');
+5)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Diomidis','Linou','ginam@gmail.com','6984654526');
+6)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Markos','Markou','markosm@gmail.com','6936654526');
+7)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Pavlos','Kotsonis','pavlosm@gmail.com','6967554526');
+8)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Dimos','Poulos','darthm@gmail.com','6927253526');
+9)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Dimitris','Dimitriou','dimdim@jrsmail.com','2133688449');
+10)INSERT INTO student(first_name,last_name,email,phone) VALUES ('Giorgos','Stayrou','giorgis@gmail.com','6987634426');
+
+1)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('20-02-2020','Maths',9.2,1);
+2)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('15-04-2020','History',5.5,2);
+3)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('21-02-2020','Language',10,2);
+4)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('12-05-2020','Java',4.5,5);
+5)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('17-01-2020','Php',4.7,5);
+6)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('05-09-2020','Python',5.7,6);
+7)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('08-12-2020','C',6.6,8);
+8)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('14-09-2020','C#',6.5,8);
+9)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('25-06-2020','Javascript',3.3,2);
+10)INSERT INTO student_exams(exam_date,modulea,grade,student_id) VALUES ('09-02-2020','Css',8.8,3);
